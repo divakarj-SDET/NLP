@@ -7,10 +7,10 @@ class ExtractingFiles:
     
     @classmethod
     def __init__(self):
-        self.pathofDirectory = os.getcwd()+"/NLP/trunk/Resumes"
-        self.listOfFiles = glob.glob(pathname=self.pathofDirectory+"/*")
+        self.pathofDirectory = os.getcwd()+"/Directory/trunk/Resumes/"
+        self.listOfFiles = glob.glob(pathname=self.pathofDirectory+"*.txt")
+        print(self.listOfFiles)
 
-    
     def __extractlistOfFiles(self):
         files = []
         for file in self.listOfFiles:
