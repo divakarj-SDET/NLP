@@ -4,15 +4,25 @@ import glob
 class ExtractingFiles:
     pathofDirectory = None
     listOfFiles = None
-    if __init__(self):
+    
+    @classmethod
+    def __init__(self):
         self.pathofDirectory = os.getcwd()+"/NLP/trunk/Resumes"
         self.listOfFiles = glob.glob(pathname=self.pathofDirectory+"/*")
 
-    def __extractlistOfFiles():
+    
+    def __extractlistOfFiles(self):
         files = []
         for file in self.listOfFiles:
             files.append(file.split("\\")[-1])
         return files
 
-    
+    def extractTextFileNames(self):
+        listOfFiles = self.__extractlistOfFiles()
+        textFileNames=[]
+        for file in listOfFiles:
+            textFileNames.append(file.split(".")[-2])
+
+        return textFileNames
         
+    
