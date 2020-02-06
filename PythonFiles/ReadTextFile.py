@@ -11,18 +11,9 @@ class TextExtraction:
         self.pathOfTextFile = os.getcwd()+"/Directory/trunk/Resumes/"+textFileName+".txt"
         
     def __textExtraction(self):
-        
         ds = pd.read_csv(self.pathOfTextFile,sep=",")
-        
+        numpyArray = ds.to_numpy()
+        return numpyArray
 
-
-        return ds
-
-
-    def __getNumberOfColumns(self,pathOfTexFile):
-        inFile = open(self.pathOfTextFile,'r')
-        columns = 0
-        for line in inFile:
-            columns = len(line.split(','))
-            break
-        return columns
+    
+    
