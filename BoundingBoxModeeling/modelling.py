@@ -16,7 +16,6 @@ class TrainModel:
         self.model = MobileNet(input_shape=(image_size,image_size,num_of_layers),alpha=1.0,include_top=False)
         for layer in self.model.layers:
             layer.trainable = False
-
         # Add new top layer which is a conv layer of the same size as the previous layer so that only 4 coords of BBox can be output
         x = self.model.layers[-1].output
         x = Conv2D(4, kernel_size=4, name="coords")(x)
@@ -24,3 +23,6 @@ class TrainModel:
         x = Reshape((4,))(x) # These are the 4 predicted coordinates of one BBox
         self.model = Model(inputs=self.model.input, outputs=x)
   
+    def fitDataInModel(self):
+        self.model.fit(self.trainX,self.trainY,epochs = 30,batch_size=32,verbose=1)
+        self.model.save()
