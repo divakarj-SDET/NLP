@@ -1,5 +1,6 @@
 import os
 import glob
+from DirectoryPath import FileDirectories
 
 class ExtractingFiles:
     pathofDirectory = None
@@ -7,7 +8,7 @@ class ExtractingFiles:
     
     @classmethod
     def __init__(self):
-        self.pathofDirectory = os.getcwd()+"/Directory/trunk/Files/"
+        self.pathofDirectory = FileDirectories.pathOfBoundingBoxFile
         self.listOfFiles = glob.glob(pathname=self.pathofDirectory+"*.txt")
         
 
