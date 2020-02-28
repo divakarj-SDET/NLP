@@ -5,7 +5,9 @@ import cv2 as cv
 extraction = ExtractingFiles()
 
 files = extraction.extractTextFileNames()
+
 text = TextExtraction(files[0])
+print(text.textExtraction())
 print(text.textExtraction().head(1))
 X1 = 0.321939*500
 Y1 = 0.204554*500

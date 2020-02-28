@@ -13,8 +13,10 @@ class TextExtraction:
         
     def textExtraction(self):
         ds = pd.read_csv(self.pathOfTextFile,sep=",",header=None)
+        columns = ds.columns.tolist()
+        new_ds = ds.drop(columns=len(columns)-1)
         
-        return ds
+        return new_ds.to_numpy()
 
     
     
