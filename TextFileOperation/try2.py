@@ -6,7 +6,12 @@ import glob
 import os
 
 image = ImagePreProcessing()
-x = image.getClassifiedCroppedImageData()
+training_classification = image.getClassifiedCroppedImageData()
+print("training_classification")
+print(training_classification)
+training_bbox = image.getTrainingSetForBoundingBox()
+print("training_bbox")
+print(training_bbox)
 
     
     
