@@ -17,7 +17,7 @@ X3 = 0.611479*500
 Y3 = 0.222373*500
 X4 = 0.322607*500
 Y4 = 0.223872*500
-filename = "C:\\Users\\divakarjoshi\\Downloads\\0156b46f.jpeg"
+filename = "E:\\NLPWorkSpace\\Directory\\trunk\\Files\\0156b46f.jpeg"
 unscaled = cv.imread(filename)
 print(unscaled.shape)
 image = cv.resize(unscaled, (500, 500))

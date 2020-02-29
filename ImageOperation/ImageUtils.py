@@ -1,4 +1,7 @@
-from DirectoryPath import FileDirectories
+import DirectoryUtils.ExtractingFiles
+import ReadTextFile.TextExtraction 
+import cv2 as cv
+import os
 import glob
 class Utils:
     imageName = None
@@ -7,5 +10,6 @@ class Utils:
     
     def __init__(self,imageName):
         self.imageName = imageName
-        self.listOfImageFiles = glob.glob(pathname=FileDirectories.pathOfImages+ imageName+".*")
+        self.listOfImageFiles = glob.glob(pathname=os.getcwd()+"/Directory/trunk/Files/"+ imageName+".*")
 
+print("DOne")
