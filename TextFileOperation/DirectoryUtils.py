@@ -6,8 +6,8 @@ class ExtractingFiles:
     listOfFiles = None
     
     @classmethod
-    def __init__(self):
-        self.pathofDirectory = os.getcwd()+"/Directory/trunk/Files/"
+    def __init__(self,filePath):
+        self.pathofDirectory = filePath
         self.listOfFiles = glob.glob(pathname=self.pathofDirectory+"*.txt")
         
 

@@ -10,8 +10,8 @@ class ImagePreProcessing:
     image_boundingBox_dataframe = pd.DataFrame(columns = ['image','imageName'])
 
     @classmethod
-    def __init__(self):
-        extraction = ExtractingFiles()
+    def __init__(self,pathOfFile):
+        extraction = ExtractingFiles(pathOfFile)
         self.files = extraction.extractTextFileNames()
 
     def getTrainingSetForBoundingBox(self):
